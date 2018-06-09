@@ -7,55 +7,61 @@
     <link href="assets/css/reset.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee|Rubik:900" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Star Wars Battle</title>
 </head>
 <body>
     <nav class="head"> StarWars Battle!</nav>
-    <div class="container jumbotron bodd">
+    <div class="container jumbotron" id="jumbo">
         <div class ="row char">
-            <div class="col-lg-12">
+            <div class="col-lg-12" id="peace">
                 <h2>Characters</h2>
             </div>
-            <div class="col-lg-12 characterWrapper">
-                <div class="col-lg-3">
-                    <p class="name">Luke Skywalker</p>
+            <div class="col-lg-12" id="characterWrapper">
+                <div class="col-lg-3 chosen">
+                    <p class="name">LUKE SKYWALKER</p>
                     <img src="assets/images/Luke.png" alt="Luke Skywalker" width="170px" height="210px">
-                    <p class="power">Full Power: 1900</p>
+                    <p class="power">Full Power: 2000</p>
                 </div>
-                <div class="col-lg-3">
-                    <p class="name">Rey</p>
+                <div class="col-lg-3 chosen">
+                    <p class="name">REY</p>
                     <img src="assets/images/Rey.png" alt="Rey" width="140px" height="210px">
                     <p class="power">Full Power: 1750</p>
                 </div>
-                <div class="col-lg-3">
-                    <p class="name">Han Solo</p>
+                <div class="col-lg-3 chosen">
+                    <p class="name">HAN SOLO</p>
                     <img src="assets/images/Solo.png" alt="Solo" width="190px" height="210px">
                     <p class="power">Full Power: 1500</p>
                 </div>
-                <div class="col-lg-3">
-                    <p class="name">Darth Vader</p>
+                <div class="col-lg-3 chosen">
+                    <p class="name">DARTH VADER</p>
                     <img src="assets/images/Vader.png" alt="Vader" width="180px" height="210px">
                     <p class="power">Full Power: 2500</p>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="col-lg-4">
+            <div class="col-lg-10">
                 <h2>Your Fighter</h2>
-            <div class="yourFighter"></div>
+            </div>
+            <div class="yourFighter">
+                <div class="health col-lg-4">
+                    <p>Health:</p>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="available">
             <div class="col-lg-12">
                 <h2>Enemies Available to attack</h2>
                 <div class="eta"></div>
             </div>
         </div>
+        <div id="available2">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Fight section</h2>
+                <h2></h2>
                 <div class="fight"></div>
             </div>
             <div class="col-lg-12">
@@ -65,16 +71,23 @@
 
         <div class ="row">
             <div class="col-lg-12">
-                <h2> Current Opppnent</h2>
+                <h2>Current Opponent</h2>
             </div>
+            <div class="opppnent">
+                <div class="health2 col-lg-4">
+                    <p>Health:</p>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
     <footer class="bott">
     <div class="container-fluid">
-        <p class="text-muted text-center cpp">Johnny Neagoe copyright 2018 ©</p>
+        <p class="text-muted text-center cpp">Johnny Neagoe © Copyright 2018 </p>
     </div>
 </body>
 
 </footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/game.js" rel="text/javascript"></script>
 </html>

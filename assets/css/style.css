@@ -7,6 +7,10 @@ html,body {
 }
 
 
+#jumbo {
+    background: rgb(250, 220, 220);
+    background: rgba(253, 225, 225, 0.7);
+}
 .head {
     background-image: url("../images/background1.png");
     font-size: 80px;
@@ -25,9 +29,28 @@ html,body {
     text-align: center;
 }
 
-.container {
+.jumbotron {
     margin-top:70px;
+    margin-bottom:70px;
 }
+
+.name {
+    font-family: 'Rubik', sans-serif;
+}
+
+.power, .health, .health2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+.chosen {
+    text-align: center;
+}
+
+.yourFighter{
+    text-align: center;
+}
+
+
 h2 {
     font-family: 'Bungee', cursive;
 }
@@ -62,6 +85,23 @@ h2 {
     padding-top:2px;
 }
 
-.characterWrapper {
+#characterWrapper {
     margin-top:10px;
+}
+
+
+.available{
+    float: right;
+    width:780px;
+    margin-right:-2%;
+    text-align: center;
+}
+
+#available2{
+    float: left;
+    clear: both;
+}
+
+.health2{
+    margin-left:12%;
 }
