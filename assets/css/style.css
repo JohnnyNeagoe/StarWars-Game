@@ -1,0 +1,67 @@
+html,body {
+    background: url("../images/background1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;   
+    -o-background-size: cover;     
+    background-size: cover;        
+}
+
+
+.head {
+    background-image: url("../images/background1.png");
+    font-size: 80px;
+    line-height: 80px;
+    padding: 5px 0px 0px 5px;
+    text-align: center;
+    color: #f5c100;
+    font-family: 'Black Ops One', cursive;
+    border-bottom: 5px;
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+.char {
+    margin-top:-40px;
+    text-align: center;
+}
+
+.container {
+    margin-top:70px;
+}
+h2 {
+    font-family: 'Bungee', cursive;
+}
+
+.attack {
+    background-color: #f5c100;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+#zaza{
+    color:black;
+    font-family: 'Black Ops One', cursive;
+}
+
+.bott {
+    background-image: url("../images/background1.png");
+    font-size: 8px;
+    height:16px;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    border-top: 2px;
+    border-style: solid;
+    border-color: aliceblue;
+    clear: both;
+}
+
+.cpp {
+    color:#f5c100;
+    padding-top:2px;
+}
+
+.characterWrapper {
+    margin-top:10px;
+}
