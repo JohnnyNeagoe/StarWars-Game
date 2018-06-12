@@ -102,6 +102,19 @@ h2 {
     clear: both;
 }
 
-.health2{
-    margin-left:12%;
+#health2, #health {
+    color:rgb(0, 136, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.oppo {
+    text-align: center;
+}
+
+.oppoOne {
+    margin-left: 30%;
+}
+
+.life {
+    margin-left:-14%;
 }
