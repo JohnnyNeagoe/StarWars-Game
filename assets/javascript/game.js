@@ -228,6 +228,7 @@ function playGame(){
                     else if ((totalHealth2 <=0)){
                         totalHealth2 = 0;
                         $("#health2").text("HP: " + totalHealth2);
+                        $(".lastOppo").remove(".lastOppo");
                         gameWinner();
                     }  
                 }
@@ -237,14 +238,14 @@ function playGame(){
         };
 
         function chooseOppoTwo(){
-                $(".oppoOne").remove(".oppoOne")
+                $(".oppoOne").remove(".oppoOne");
                 alert("Choose Your Next Victim!");
                 $("#characterWrapper").on("click",".nextOppo", function(){
                 $(this).appendTo(".opponent");
-                $(this).attr("class", "col-lg-6 oppoTwo")
+                $(this).attr("class", "col-lg-6 oppoTwo");
             
                 if ($(this).appendTo(".opponent")); {
-                $(".nextOppo").attr("class", "col-lg-6 lastOppo")
+                $(".nextOppo").attr("class", "col-lg-6 lastOppo");
 
                 playTwo();
                 }
@@ -253,16 +254,16 @@ function playGame(){
 
         function chooseLastOppo(){
             if ((totalHealth2 === 0)){
-            $(".oppoTwo").remove(".oppoTwo")
+            $(".oppoTwo").remove(".oppoTwo");
             alert("Choose Your Next Victim!");
             $("#characterWrapper").on("click",".lastOppo", function(){
             $(this).appendTo(".opponent");
-            $(this).attr("class", "col-lg-6 oppoThree")
+            $(this).attr("class", "col-lg-6 oppoThree");
             if ($(this).appendTo(".opponent")); {
                 $(".available").hide();
 
             playThree();
-            }
+            };
             });
         };
         };
@@ -275,11 +276,14 @@ function playGame(){
             alert("YOU WIN! CONGRATS! Play again if you'd like");
 
             resetGame();
-        }
+        };
 
         function resetGame(){
             
-        }
+
+            choose();
+            
+        };
 
 
 
