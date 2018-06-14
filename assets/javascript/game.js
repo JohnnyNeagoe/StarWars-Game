@@ -22,217 +22,222 @@ function playGame(){
             $(".chosen").attr("class", "col-lg-4 oppo")
             $("#peace").hide();
             
-            chooseOppo();
+            firstOppo();
             };
         });
     };
-    function chooseOppo(){
+    function firstOppo(){
         $("#characterWrapper").on("click",".oppo", function(){
         $(this).appendTo(".opponent");
         $(this).attr("class", "col-lg-6 oppoOne")
 
             if ($(this).appendTo(".opponent")); {
             $(".oppo").attr("class", "col-lg-6 nextOppo")
-            play();
+            
+            onePlay();
             }
         });
+        return onePlay;
     };
-    function play(){
+    function secondOppo(){
+        $("#results1").html("Choose your next opponent from above!"); 
+        $("#results2").html("Use the FORCE young protégé!");
+        $(".oppoOne").remove(".oppoOne");
+        $("#characterWrapper").on("click",".nextOppo", function(){
+        $(this).appendTo(".opponent");
+        $(this).attr("class", "col-lg-6 oppoTwo");
+    
+            if ($(this).appendTo(".opponent")); {
+            $(".nextOppo").attr("class", "col-lg-6 lastOppo");
+
+            twoPlay();
+            }
+        });
+        return twoPlay;
+    };
+    function lastOppo(){
+        $("#results1").html("Choose your next opponent from above!"); 
+        $("#results2").html("One last foe and you WIN! The force is strong with you");
+        $("#characterWrapper").on("click", ".lastOppo", function(){
+        $(".oppoTwo").remove(".oppoTwo");
+        $(this).appendTo(".opponent");
+        $(this).attr("class", "col-lg-6 oppoThree");
+
+            if ($(this).appendTo(".opponent")); {
+            $(".available").hide();
+            
+            threePlay();
+            };
+        });
+        return threePlay;
+    };
+
+    function onePlay(){
         if ($(".player").is("#rey")){
-            totalHealth = 1750;
+            totalHealth = 2750;
             $("#health").text("HP: " + totalHealth);
             $(".power2").hide();
-            originalAttack  = 70;
+            originalAttack  = 85;
         } else if ($(".player").is("#luke")){
-            totalHealth = 2000;
+            totalHealth = 3500;
             $("#health").text("HP: " + totalHealth);
             $(".power1").hide();
             originalAttack  = 100;
         } else if ($(".player").is("#vader")){
-            totalHealth  = 2500;
+            totalHealth  = 3000;
             $("#health").text("HP: " + totalHealth);
             $(".power3").hide();
-            originalAttack = 150;
+            originalAttack = 125;
         } else if ($(".player").is("#han")){
-            totalHealth  = 1500;
+            totalHealth  = 2500;
             $("#health").text("HP: " + totalHealth);
             $(".power4").hide();
             originalAttack = 80;
         };
         if ($(".oppoOne").is("#rey")){
-            totalHealth2 = 1750;
+            totalHealth2 = 2750;
             $("#health2").text("HP: " + totalHealth2);
             $(".power2").hide();
-            oppoAttack = [150];
+            oppoAttack = [120];
         } else if ($(".oppoOne").is("#luke")){
-            totalHealth2 = 2000;
+            totalHealth2 = 3500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power1").hide();
-            oppoAttack = [200];
+            oppoAttack = [130];
         } else if ($(".oppoOne").is("#vader")){
-            totalHealth2 = 2500;
-            $("#health").text("HP: " + totalHealth2);
+            totalHealth2 = 3000;
+            $("#health2").text("HP: " + totalHealth2);
             $(".power3").hide();
-            oppoAttack = [250];
+            oppoAttack = [200];
         } else if ($(".oppoOne").is("#han")){
-            totalHealth2 = 1500;
+            totalHealth2 = 2500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power4").hide();
-            oppoAttack = [140];
+            oppoAttack = [110];
         }    
-            attackPlayer();
+            firstAttack();
     };
-    function playTwo(){
+    function twoPlay(){
         if ($(".oppoTwo").is("#rey")){
-            totalHealth2 = 1750;
+            totalHealth2 = 2750;
             $("#health2").text("HP: " + totalHealth2);
             $(".power2").hide();
-            oppoAttack = [150];
+            oppoAttack = [120];
         } else if ($(".oppoTwo").is("#luke")){
-            totalHealth2 = 2000;
+            totalHealth2 = 3500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power1").hide();
-            oppoAttack = [200];
+            oppoAttack = [130];
         } else if ($(".oppoTwo").is("#vader")){
-            totalHealth2 = 2500;
+            totalHealth2 = 3000;
             $("#health").text("HP: " + totalHealth2);
             $(".power3").hide();
-            oppoAttack = [250];
+            oppoAttack = [200];
         } else if ($(".oppoTwo").is("#han")){
-            totalHealth2 = 1500;
+            totalHealth2 = 2500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power4").hide();
-            oppoAttack = [140];
+            oppoAttack = [110];
         }    
-        attackPlayerTwo();
+        secondAttack();
     };
-    function playThree(){
+    function threePlay(){
         if ($(".oppoThree").is("#rey")){
-            totalHealth2 = 1750;
+            totalHealth2 = 2750;
             $("#health2").text("HP: " + totalHealth2);
             $(".power2").hide();
-            oppoAttack = [150];
+            oppoAttack = [120];
         } else if ($(".oppoThree").is("#luke")){
-            totalHealth2 = 2000;
+            totalHealth2 = 3500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power1").hide();
-            oppoAttack = [200];
+            oppoAttack = [130];
         } else if ($(".oppoThree").is("#vader")){
-            totalHealth2 = 2500;
+            totalHealth2 = 3000;
             $("#health").text("HP: " + totalHealth2);
             $(".power3").hide();
-            oppoAttack = [250];
+            oppoAttack = [200];
         } else if ($(".oppoThree").is("#han")){
-            totalHealth2 = 1500;
+            totalHealth2 = 2500;
             $("#health2").text("HP: " + totalHealth2);
             $(".power4").hide();
-            oppoAttack = [140];
+            oppoAttack = [110];
         }    
-        attackPlayerThree();
+        thirdAttack();
     };
-        function attackPlayer(){
+        function firstAttack(){
             $("#buttonOne").on("click", function(){
                 attackOptions += originalAttack;
                 if ((totalHealth2 > 0)) {
                     totalHealth = (totalHealth - oppoAttack);
                     $("#health").text("HP: " + totalHealth);
-                    console.log("Your Health is ", totalHealth);
-                    console.log("Opponent Attack was ", oppoAttack);
   
                     totalHealth2 = (totalHealth2 - attackOptions);
                     $("#health2").text("HP: " + totalHealth2);
-                    console.log("Opponent Health ", totalHealth2);
-                    console.log("Your Attack ", attackOptions );
+                    $("#results1").html("Your last attack did " + " " + attackOptions + " " + "damage!"); 
+                    $("#results2").html("Opponent's last attack did " + oppoAttack +  " " + "damage!");
                     
-                    if ((totalHealth2 <=0)){
-                        totalHealth2 = 0;
-                        $("#health2").text("HP: " + totalHealth2);
-                        alert("Choose Your Next Victim!");
-                        chooseOppoTwo();
-                    } else if ((totalHealth <= 0)){
-                        alert("You LOSE! The Darkside has conqured your soul");
+                    if ((totalHealth <= 0)){
                         gameOver();
+                    } else if ((totalHealth2 <=0)){
+                        $("#health2").text("HP: " + totalHealth2);
+                        secondOppo();
                     }  
                 };
             }); 
+            return firstAttack; 
         };
-        function attackPlayerTwo(){
+        function secondAttack(){
             $("#buttonOne").on("click", function(){
                 attackOptions += originalAttack;
                 if ((totalHealth2 > 0)) {
                     totalHealth = (totalHealth - oppoAttack);
                     $("#health").text("HP: " + totalHealth);
-                    console.log("Your Health is ", totalHealth);
-                    console.log("Opponent Attack was ", oppoAttack);
 
                     totalHealth2 = (totalHealth2 - attackOptions);
                     $("#health2").text("HP: " + totalHealth2);
-                    console.log("Opponent Health ", totalHealth2);
-                    console.log("Your Attack ", attackOptions);
+                    $("#results1").html("Your last attack did " + " " + attackOptions + " " + "damage!"); 
+                    $("#results2").html("Opponent's last attack did " + oppoAttack +  " " + "damage!");
 
                     if ((totalHealth <= 0)){
-                        alert("You LOSE! The Darkside has conqured your soul");
                         gameOver();
                     } else if ((totalHealth2 <=0)){
-                        totalHealth2 = 0;
                         $("#health2").text("HP: " + totalHealth2);
-                        alert("One Opponent Left!");
-                        chooseLastOppo();
+                        lastOppo();
+                        
                     };
                 };
-            });  
+            }); 
+            return secondAttack; 
         };
-        function attackPlayerThree(){
+        function thirdAttack(){
             $("#buttonOne").on("click", function(){
                 attackOptions += originalAttack;
                 if ((totalHealth2 > 0)) {
                     totalHealth = (totalHealth - oppoAttack);
                     $("#health").text("HP: " + totalHealth);
-                    console.log("Your Health is ", totalHealth);
-                    console.log("Opponent Attack was ", oppoAttack);
   
                     totalHealth2 = (totalHealth2 - attackOptions);
                     $("#health2").text("HP: " + totalHealth2);
-                    console.log("Opponent Health ", totalHealth2);
-                    console.log("Your Attack ", attackOptions);
+                    $("#results1").html("Your last attack did " + " " + attackOptions + " " + "damage!"); 
+                    $("#results2").html("Opponent's last attack did " + oppoAttack +  " " + "damage!");
                
-                    if ((totalHealth2 <=0)){
-                        totalHealth2 = 0;
+                    if ((totalHealth <= 0)){
+                    gameOver();
+
+                    } else if ((totalHealth2 <=0)){
                         $("#health2").text("HP: " + totalHealth2);
                         $(".lastOppo").remove(".lastOppo");
                         gameWinner();
-                    } else if ((totalHealth <= 0)){
-                        alert("You LOSE! The Darkside has conqured your soul");
-                        gameOver();
+                    
                     };
                 };  
-            });  
+            }); 
+            return thirdAttack; 
         };
-        function chooseOppoTwo(){
-                $(".oppoOne").remove(".oppoOne");
-                $("#characterWrapper").on("click",".nextOppo", function(){
-                $(this).appendTo(".opponent");
-                $(this).attr("class", "col-lg-6 oppoTwo");
-            
-                if ($(this).appendTo(".opponent")); {
-                $(".nextOppo").attr("class", "col-lg-6 lastOppo");
-
-                playTwo();
-                }
-            });
-        };
-        function chooseLastOppo(){
-            $(".oppoTwo").remove(".oppoTwo");
-            $("#characterWrapper").on("click",".lastOppo", function(){
-                $(this).appendTo(".opponent");
-                $(this).attr("class", "col-lg-6 oppoThree");
-                if ($(this).appendTo(".opponent")); {
-                    $(".available").hide();
-                    playThree();
-                };
-            });
-        };
+       
         function gameOver(){
+            alert("You LOSE! The Darkside has conqured your soul");
             resetGame();
         };
         function gameWinner(){
