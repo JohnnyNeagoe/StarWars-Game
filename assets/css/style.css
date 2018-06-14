@@ -127,3 +127,9 @@ h2 {
     text-align: center;
     margin-top: 20px;
 }
+
+#results1, #results2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    
+}
