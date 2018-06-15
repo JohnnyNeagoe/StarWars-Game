@@ -1,14 +1,12 @@
-
 var totalHealth = 0;
 var totalHealth2 = 0;
 var attackOptions = 0;
 var oppoAttack = [];
 var originalAttack = 0;
 
-/* document.onload = setTimeout(function () { alert("Rules: Choose your fighter by clicking on one of the characters on this page. Once your fighter is chosen, you will decide who they will go up against by clicking on another character. Once an Opponent is chosen, click the attack button to do damage to their health! Be careful though, as each time you attack, your opoonent strikes you too! Do you have what it takes to make it past all of your opponents? Will you let the darkside consume you? GOOD LUCK"); }, 2000);
- */
-playGame();
+/* document.onload = setTimeout(function () { alert("Rules: Choose your fighter by clicking on one of the characters on this page. Once your fighter is chosen, you will decide who they will go up against by clicking on another character. Once an Opponent is chosen, click the attack button to do damage to their health! Be careful though, as each time you attack, your opoonent strikes you too! Do you have what it takes to make it past all of your opponents? Will you let the darkside consume you? GOOD LUCK"); }, 2000); */
 
+playGame();
 function playGame(){
     choose();
     function choose(){
@@ -23,7 +21,6 @@ function playGame(){
             };
         });
     };
-
     function firstOppo(){
         $("#characterWrapper").on("click",".oppo", function(){
         $(this).appendTo(".opponent");
@@ -79,7 +76,6 @@ function playGame(){
                 jediAttack();
         };
     };
-
     function secondOppo(){
         $("#results1").html("Choose your next opponent from above!"); 
         $("#results2").html("Use the FORCE young protégé!");
@@ -116,10 +112,9 @@ function playGame(){
             };
         };
     };
-
     function thirdOppo(){
-        $("#results1").html("Choose your next opponent from above!"); 
-        $("#results2").html("One last foe and you WIN! The force is strong with you");
+        $("#results1").html("Choose your next opponent from above! Fear is the path to the Dark Side."); 
+        $("#results2").html("One last adversary and you WIN! The force is strong with you");
         $("#characterWrapper").on("click",".lastOppo", function() {
         $(".lastOppo").appendTo(".opponent");
         $(".lastOppo").attr("class", "col-lg-6 oppoThree");
@@ -155,9 +150,10 @@ function playGame(){
         };
     };
     function jediAttack(){
-        $("#buttonOne").on("click", function(){
-            attackOptions += originalAttack;
+        $("#buttonOne").on("click", function(event){
             if ((totalHealth2 > 0)) {
+                PlayRandomHitSound();
+                attackOptions += originalAttack;
                 totalHealth = (totalHealth - oppoAttack);
                 $("#health").text("HP: " + totalHealth);
 
@@ -169,7 +165,9 @@ function playGame(){
                 if ((totalHealth <= 0)){
                     gameOver();
                 } else if((totalHealth2 <=0)){
+                    totalHealth2 = 0;
                     $("#health2").text("HP: " + totalHealth2);
+                    event = null;
                     oppoList();
                 }  
             };
@@ -193,15 +191,25 @@ function playGame(){
             });
         };
     function gameOver(){
-        alert("You LOSE! The Darkside has conqured your soul");
+        alert("You LOSE! I find your lack of faith disturbing.");
         resetGame();
     };
     function gameWinner(){
-        alert("YOU WIN! CONGRATS! Play again if you'd like!");
+        alert("YOU WIN! The Force is Strong with You!");
         resetGame();
     };
     function resetGame(){
-            $()
-    choose();     
-};
+            location.reload();
+            playGame();    
+    };
+    function PlaySound(url) {
+        var audio = new Audio(url);  
+        audio.play();
+      }
+      
+      function PlayRandomHitSound() {
+        var arr = ['assets/sounds/Heavy_swing_2.mp4', 'assets/sounds/Light_swing_1.mp4', 'assets/sounds/Hit_1.mp4', 'assets/sounds/Light_swing_2.mp4', 'assets/sounds/Hit_2.mp4'];
+        var randIndex = Math.floor(Math.random() * arr.length);
+        PlaySound(arr[randIndex]);
+      }
 };

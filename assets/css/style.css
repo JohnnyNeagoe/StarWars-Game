@@ -3,7 +3,7 @@ html,body {
     -webkit-background-size: cover; 
     -moz-background-size: cover;   
     -o-background-size: cover;     
-    background-size: cover;        
+    background-size: cover;       
 }
 
 
@@ -40,7 +40,8 @@ html,body {
 
 .power1, .power2, .power3, .power4, .health, .health2 {
     color:rgb(0, 136, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: .70px;
 }
 .chosen {
     text-align: center;
@@ -106,7 +107,8 @@ h2 {
 
 #health2, #health {
     color:rgb(0, 136, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: .70px;
 }
 
 .oppo {
@@ -133,4 +135,10 @@ h2 {
 #results1, #results2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: red;
+    text-align: center;
+    font-size: 30px;
+    border:solid;
+    border-width: 5px;
+    border-color: black;
+    padding:10px;
 }
