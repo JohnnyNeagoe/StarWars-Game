@@ -4,8 +4,6 @@ var attackOptions = 0;
 var oppoAttack = [];
 var originalAttack = 0;
 
-/* document.onload = setTimeout(function () { alert("Rules: Choose your fighter by clicking on one of the characters on this page. Once your fighter is chosen, you will decide who they will go up against by clicking on another character. Once an Opponent is chosen, click the attack button to do damage to their health! Be careful though, as each time you attack, your opoonent strikes you too! Do you have what it takes to make it past all of your opponents? Will you let the darkside consume you? GOOD LUCK"); }, 2000); */
-
 playGame();
 function playGame(){
     choose();
@@ -150,9 +148,9 @@ function playGame(){
         };
     };
     function jediAttack(){
-        $("#buttonOne").on("click", function(event){
+        $("#buttonOne").on("click", function(){
             if ((totalHealth2 > 0)) {
-                PlayRandomHitSound();
+                lightSaber();
                 attackOptions += originalAttack;
                 totalHealth = (totalHealth - oppoAttack);
                 $("#health").text("HP: " + totalHealth);
@@ -162,12 +160,13 @@ function playGame(){
                 $("#results1").html("Your last attack did " + " " + attackOptions + " " + "damage!"); 
                 $("#results2").html("Opponent's last attack did " + oppoAttack +  " " + "damage!");
                 console.log(attackOptions);
-                if ((totalHealth <= 0)){
+                if ((totalHealth2 <=0 && totalHealth <=0)) {
+                    tieGame();
+                } else if ((totalHealth <= 0)){
                     gameOver();
-                } else if((totalHealth2 <=0)){
+                } else if ((totalHealth2 <=0)){
                     totalHealth2 = 0;
                     $("#health2").text("HP: " + totalHealth2);
-                    event = null;
                     oppoList();
                 }  
             };
@@ -175,16 +174,18 @@ function playGame(){
     };
         function oppoList() {
             if ((attackOptions < 690)){
-                    secondOppo();
+            secondOppo();
             } else if ((attackOptions <= 720 && originalAttack >= 70)){
-                    secondOppo();
+            secondOppo();
             } else if ((attackOptions <= 820 && originalAttack >= 90)){
-                    secondOppo();
+            secondOppo();
             } else thirdOppo();
         };
         function lastFight(){
             $("#buttonOne").on("click", function(){
-                if((totalHealth2 <=0)){
+                if ((totalHealth2 <=0 && totalHealth <=0)) {
+                    resetGame();
+                } else if((totalHealth2 <=0)){
                     $("#health2").text("HP: " + totalHealth2);
                     gameWinner();
                 }  
@@ -198,18 +199,22 @@ function playGame(){
         alert("YOU WIN! The Force is Strong with You!");
         resetGame();
     };
+    function tieGame(){
+        alert("It's a Draw! Remember…the Force will be with you, always.");
+        resetGame();
+    }
     function resetGame(){
             location.reload();
             playGame();    
     };
-    function PlaySound(url) {
-        var audio = new Audio(url);  
+    
+    function playSound(fx) {
+        var audio = new Audio(fx);  
         audio.play();
       }
-      
-      function PlayRandomHitSound() {
+      function lightSaber() {
         var arr = ['assets/sounds/Heavy_swing_2.mp4', 'assets/sounds/Light_swing_1.mp4', 'assets/sounds/Hit_1.mp4', 'assets/sounds/Light_swing_2.mp4', 'assets/sounds/Hit_2.mp4'];
         var randIndex = Math.floor(Math.random() * arr.length);
-        PlaySound(arr[randIndex]);
+        playSound(arr[randIndex]);
       }
 };
