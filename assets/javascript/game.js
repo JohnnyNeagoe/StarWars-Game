@@ -5,7 +5,10 @@ var oppoAttack = [];
 var originalAttack = 0;
 var audio = new Audio("assets/sounds/theme.mp3");
 $(window).on("load", function(){
-    $(".one").hide(); $("#two").hide();$("#four").hide(); $("#results1").hide(); $("#results2").hide();
+    $(".one").hide(); $("#two").hide();$("#four").hide(); $("#results1").hide(); $("#results2").hide();$("#zaza").hide();
+});
+$(".vol").on("click", function(){
+    audio.pause();
 });
 playGame();
 function playGame(){
@@ -32,6 +35,7 @@ function playGame(){
         $(this).appendTo(".opponent");
         $(this).attr("class", "col-lg-6 oppoOne")
         $("#four").show(); 
+        $("#zaza").show();
             if ($(this).appendTo(".opponent")); {
             $(".oppo").attr("class", "col-lg-6 nextOppo")
             onePlay();
@@ -217,8 +221,8 @@ function playGame(){
             playGame();    
     };
     function playSound(fx) {
-        var audio = new Audio(fx);  
-        audio.play();
+        var audio1 = new Audio(fx);  
+        audio1.play();
       }
       function lightSaber() {
         var arr = ['assets/sounds/Heavy_swing_2.mp4', 'assets/sounds/Light_swing_1.mp4', 'assets/sounds/Hit_1.mp4', 'assets/sounds/Light_swing_2.mp4', 'assets/sounds/Hit_2.mp4'];
