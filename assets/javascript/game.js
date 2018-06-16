@@ -3,14 +3,22 @@ var totalHealth2 = 0;
 var attackOptions = 0;
 var oppoAttack = [];
 var originalAttack = 0;
-
+var audio = new Audio("assets/sounds/theme.mp3");
+$(window).on("load", function(){
+    $(".one").hide(); $("#two").hide();$("#four").hide(); $("#results1").hide(); $("#results2").hide();
+});
 playGame();
 function playGame(){
     choose();
+    
     function choose(){
         $("#characterWrapper").on("click",".chosen", function(){
+        audio.play();
+        audio.volume = 0.2;
         $(this).appendTo(".yourFighter");
         $(this).attr("class", "col-lg-12 player")
+        $(".one").show(); 
+        $("#three").remove(); 
             if ($(this).appendTo(".yourFighter")); {
             $("#characterWrapper").appendTo(".eta");
             $(".chosen").attr("class", "col-lg-4 oppo")
@@ -23,6 +31,7 @@ function playGame(){
         $("#characterWrapper").on("click",".oppo", function(){
         $(this).appendTo(".opponent");
         $(this).attr("class", "col-lg-6 oppoOne")
+        $("#four").show(); 
             if ($(this).appendTo(".opponent")); {
             $(".oppo").attr("class", "col-lg-6 nextOppo")
             onePlay();
@@ -149,12 +158,12 @@ function playGame(){
     };
     function jediAttack(){
         $("#buttonOne").on("click", function(){
+        $("#results1").show(); $("#results2").show(); $("#two").show();
             if ((totalHealth2 > 0)) {
                 lightSaber();
                 attackOptions += originalAttack;
                 totalHealth = (totalHealth - oppoAttack);
                 $("#health").text("HP: " + totalHealth);
-
                 totalHealth2 = (totalHealth2 - attackOptions);
                 $("#health2").text("HP: " + totalHealth2);
                 $("#results1").html("Your last attack did " + " " + attackOptions + " " + "damage!"); 
@@ -207,7 +216,6 @@ function playGame(){
             location.reload();
             playGame();    
     };
-    
     function playSound(fx) {
         var audio = new Audio(fx);  
         audio.play();

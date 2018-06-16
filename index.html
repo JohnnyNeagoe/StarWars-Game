@@ -9,10 +9,14 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee|Rubik:900" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <audio id="my_audio" src="assets/sounds/theme.mp3" loop="loop" allow="autoplay"></audio>
     <title>Star Wars Battle</title>
 </head>
 <body>
     <nav class="head"> Star Wars Battle!</nav>
+    <div>
+        <button type="button" class="glyphicon glyphicon-volume-up vol"></button>
+    </div>
     <div class="container jumbotron" id="jumbo">
         <div class ="row char">
             <div class="col-lg-12" id="peace">
@@ -39,12 +43,15 @@
                     <img src="assets/images/Vader.png" alt="Vader" width="180px" height="210px">
                     <p class="power3">HP: 2500</p>
                 </div>
+                <div class="col-lg-12" id="peace">
+                    <h2 id="three">Choose Your Fighter!</h2>
+                </div>
             </div>
         </div>
 
         <div class="life2 col-lg-4">
             <div class="col-lg-12">
-                <h2>Your Fighter</h2>
+                <h2 class="one">Your Fighter</h2>
             </div>
             <div class="yourFighter">
                 <div class="life col-lg-6">
@@ -54,18 +61,17 @@
         </div>
         <div class="available">
             <div class="col-lg-12">
-                <h2>Enemies Available to attack</h2>
+                <h2 class="one">Enemies Available to attack</h2>
                 <div class="eta"></div>
             </div>
         </div>
-        <div id="available2">
-            <div class="row col-lg-12" id="buttonOne">
-                    <button type="button" class="btn btn-primary btn-lg attack" id="zaza"> Attack</button>
+        <div class="col-lg-6" id="available2">
+            <div class="row col-lg-6" id="buttonOne">
+                <button type="button" class="btn btn-primary btn-lg attack one" id="zaza"> Attack</button>
             </div>
-
             <div class ="col-lg-12">
                 <div class="col-lg-12">
-                    <h2>Current Opponent</h2>
+                    <h2 id="four">Current Opponent</h2>
                 </div>
                 <div class="opponent">
                     <div class="col-lg-12">
@@ -74,9 +80,9 @@
                 </div>
             </div>
         </div>
-        <div class ="col-lg-6">
+        <div class ="col-lg-6 lastly">
                 <div class="col-lg-12" id="titles">
-                    <h2>Outcomes</h2>
+                    <h2 id="two">Battle Statistics</h2>
                 </div>
                 <div class="outcomes">
                     <div class="col-lg-12">

@@ -37,6 +37,7 @@ html,body {
 
 .name {
     font-family: 'Rubik', sans-serif;
+    text-align: center;
 }
 
 .power1, .power2, .power3, .power4, .health, .health2 {
@@ -127,19 +128,48 @@ h2 {
 .outcomes{
     float:left;
 }
-
+.vol {
+    margin:20px;
+    height:40px;
+    width:40px;
+    background: rgb(250, 220, 220);
+    background: rgba(253, 225, 225, 0.5);
+    border-radius: 25px;
+}
 #titles{
     text-align: center;
     margin-top: 20px;
 }
 
 #results1, #results2{
+    margin-top:50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: red;
     text-align: center;
     font-size: 30px;
-    border:solid;
-    border-width: 5px;
-    border-color: black;
     padding:10px;
+    box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.3); 
+    margin-left:-100px;
+
+}
+#three{
+    margin-top:40px;
+    margin-bottom:-40px;
+}
+#buttonOne{
+    margin: 30px 0px -10px 120px;
+
+}
+
+#two{
+    margin-left:-200px;
+    margin-bottom:-20px;
+}
+
+.oppoOne{
+    margin-left:100px;
+}
+
+.oppoTwo, .oppoThree{
+    margin-left:60px;
 }
