@@ -1,18 +1,47 @@
-Star Wars Battle
+# Star Wars Battle
 
-Rules: 
-Choose your fighter by clicking on one of the characters on this page. 
-Once your fighter is chosen, you will decide who they will go up against by clicking on another character. 
-Once an Opponent is chosen, click the attack button to do damage to their health! 
-Be careful though, as each time you attack, your opponent strikes back! 
-Do you have what it takes to make it past all of your opponents? 
-Will you fall victim to the darkside?
+Star Wars battle RPG Style Game.
+
+## Motivation
+
+This Website was built in order to expand my coding skills and learn more about javascript. This was my first major coding project and I am proud of what I was able to achive with less then 2 months of experience. 
+
+## Build status
+
+Current status:
+- Update and Improve CSS
+- Add character animations
+- Add more characters and imporve scoring system
+
+## Code style
+
+Javascript Standard
+
+## Instruction
+
+1.	Choose your fighter by clicking on one of the characters on this page. 
+2.	Once your fighter is chosen, you will decide who they will go up against by clicking on another character. 
+3.	Once an Opponent is chosen, click the attack button to do damage to their health! 
+4.	Be careful though, as each time you attack, your opponent strikes back! 
+5.	Goal: Fight all opponents to win
+
+## Screenshots 
+
+See sample screenshots of what the website looks like below:
 
 
+![alt text](https://github.com/JohnnyNeagoe/StarWars-Game/blob/master/assets/images/character.png?raw=true)
 
-Found fix to run game smoothly, third opponent is now available to be chosen.
+![alt text](https://github.com/JohnnyNeagoe/StarWars-Game/blob/master/assets/images/attack.png?raw=true)
 
-Was not able to restart the game upon winning or losing. Page re-load did the trick.
+## Tech/Frameworks used
 
-Please suggest any changes or tips to improve the game.
+<b>Built with</b>
+
+- CSS, HTML, Javascript, JQuery
+
+
+## [Demo](https://johnnyneagoe.github.io/StarWars-Game/)
+
+## Website built by: Johnny Neagoe
 
